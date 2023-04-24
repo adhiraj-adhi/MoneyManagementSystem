@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Confirm Deletion </title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.confirm-message{
+			width: 400px;
+			height: fit-content;
+			background: #fff1f0;
+			padding: 2.75rem 2rem;
+			border-radius: 15px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.confirm-message h3{
+			color: orangered;
+			margin-bottom: 1rem;
+		}
+		.confirm-message .confirm-anchor {
+			width: 50%;
+			display: flex;
+			justify-content: space-evenly;
+		}
+		.confirm-message .confirm-anchor a{
+			text-decoration: none;
+			background: #18e06f;
+			color: white;
+			padding: 0.6rem 1.5rem;
+			border-radius: 7px;
+		}
+		.confirm-message .confirm-anchor .Yes{
+			background: orangered;
+		}
+		@media screen and (max-width : 480px){
+			.confirm-message{
+				width: 90%;
+			}
+			.confirm-message .confirm-anchor {
+				width: 90%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="confirm-message">
+			<h3> Are You Sure To Delete This Deal ? </h3>
+			<div class="confirm-anchor">
+				<a href="/confirmDelete/<%= ids.id %>/<%= ids.lendersId%>/<%= ids.dealsId%>" class="Yes"> Yes </a>
+				<a href="/deals/<%= ids.id %>/<%= ids.lendersId%>"> No </a>
+			</div>
+		</div>
+</body>
+</html>

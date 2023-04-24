@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Deals Page </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+	<header>
+		<h3 class="userName"> <a href="/profile/<%= ids.id %>" title="Go To Home Page"> Hello !!! <%= data.name %> </a> </h3>
+		<div class="logOut">
+			<a href="/logout"> Logout </a>
+		</div>
+	</header>
+
+    <h3 class="lendersName"> Deals With <%= lender.lenderName %> </h3>
+    <% if(lender.price.length === 0) { %>
+        <div class="add-deal">
+            <p> <a href="/addDeal/<%= ids.id %>/<%= ids.lendersId %>" title="Click To Add"> Add A Deal <span style="font-size: 1.3rem"> &#8594; </span> </a> </p>
+        </div>
+    <% } else { %>   
+        <div class="container4">
+            <% lender.price.forEach((item) => { %>  
+                <div class="card">
+                    <div class="details">
+                        <% let day = (item.date).getDate(); %>
+                        <% let month = (item.date).getMonth() + 1 %>
+                        <% let year = (item.date).getFullYear() %>
+                        <% if(day < 9) { %>
+                            <% day = "0" + day %>
+                        <% } %>
+                        <% if(month < 9) { %>
+                            <% month = "0" + month %>
+                        <% } %>
+                        <div class="date"> Date Of Deal : <%= day + "-" + month + "-" + year %> </div>
+                    </div>
+                    <div class="status">
+                        <% if(item.amount < 0) { %>
+                            <p class="gave"> You Gave </p>
+                            <div class="amount"> <i class="fas fa-rupee-sign"></i> <span> <%= -item.amount %> </span> </div>
+                        <% } else { %>
+                            <p class="got"> You Got </p>
+                            <div class="amount"> <i class="fas fa-rupee-sign"></i> <span> <%= item.amount %> </span> </div>
+                        <% } %>
+                    </div>
+                    
+                    <div class="message"> <%= item.message %> </div>
+                    
+                    <div class="options">
+                        <a href="/editDeal/<%= ids.id %>/<%= ids.lendersId %>/<%= item._id.valueOf() %>" title="Edit" class="edit"> <i class="fas fa-edit"></i> </a>
+                        <a href="/deleteDeal/<%= ids.id %>/<%= ids.lendersId %>/<%= item._id.valueOf() %>" title="Delete"> <i class="fas fa-trash-alt"></i> </a>
+                    </div>
+                </div>
+            <% }) %>
+    
+        <div class="add-deal">
+            <p> <a href="/addDeal/<%= ids.id %>/<%= ids.lendersId %>" title="Click To Add"> Add New Deal <span style="font-size: 1.3rem"> &#8594; </span> </a> </p>
+        </div>
+    <% } %>
+</body>
+</html>

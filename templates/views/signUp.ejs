@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Signup page </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container-signup">
+		<div class="form-wrapper">
+			<div class="signup-form">
+				<h3> Register Here </h3>
+				<form action="/signup" method="post">
+					<div class="forDesign">
+						<input type="text" name="name" placeholder="Enter Name" />
+						<!-- <p class="nameError"> Name error will be shown here </p> -->
+						<p class="nameError"> <%= data.name %> </p>
+					</div>
+
+					<div class="forDesign">
+						<input type="email" name="email" placeholder="Enter Email" />
+						<!-- <p class="emailError"> Email error will be shown here </p> -->
+						<p class="emailError"> <%= data.email %> </p>
+					</div>
+
+					<div class="forDesign">
+						<input type="password" name="password" placeholder="Enter Password" />
+						<!-- <p class="passwordError"> Password error will be shown here </p> -->
+						<p class="passwordError"> <%= data.password %> </p>
+					</div>
+
+					<div class="forDesign">
+						<input type="password" name="confPassword" placeholder="Confirm Password" />
+						<!-- <p class="confPasswordError"> Password error will be shown here </p> -->
+						<p class="passwordError"> <%= data.password %> </p>
+					</div>
+
+					<input type="submit" value="Register">
+				</form>
+
+				<p class="signin-router"> Already Registered ? <a href="/"> Login </a></p>
+			</div>
+		</div>
+	</div>
+
+    <!-- <script>
+        let form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+        })
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Deals Page </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <!-- <% console.log(data) %> -->
+	<header>
+		<h3 class="userName"> <a href="" title="Refresh"> Hello !!! <%= data.name %> </a> </h3>
+		<div class="logOut">
+			<a href="/logout"> Logout </a>
+		</div>
+	</header>
+
+    <% if(data.deals.length === 0) { %>
+        <div class="add-lender">
+            <p> <a href="/addLender/<%= data._id.valueOf() %>" title="Click To Add"> <span> <i class="fas fa-plus"></i> </span> Add A Lender </a> </p>
+        </div>
+    <% } else { %>
+        <div class="container2">
+            <div class="lenders">
+                <div class="lender-name"> Lender's Name </div>
+                <div class="status">
+                    <div class="status-name"> Status </div>
+                    <div class="status-amount"> Amount </div>
+                </div>
+                <div class="see-deals"> View </div>
+            </div>
+
+            <% data.deals.forEach((deal) => { %>
+                <% let total = 0; %>
+                <% deal.price.forEach((item) => { %>
+                    <% total = total + item.amount %>
+                <% }) %>
+
+                <div class="lenders">
+                    <div class="lender-name"> <%= deal.lenderName %> </div>
+                    <div class="status">
+                        <% if(total < 0) { %>
+                            <div class="status-name gave"> You Gave </div>
+                            <div class="status-amount"> <%= -total %> </div>
+                        <% } else if (total === 0) { %>
+                            <div class="status-name"> Settled Up </div>
+                            <div class="status-amount"> 0.0 </div>
+                        <% } else { %>
+                            <div class="status-name got"> You Got </div>
+                            <div class="status-amount"> <%= total %> </div>
+                        <% } %>
+                    </div>
+                    <div class="see-deals"> <a href="/deals/<%= data._id.valueOf() %>/<%= deal._id.valueOf() %>"> <i class="fas fa-eye" style="color: #f6c544; font-size: 1.2rem; font-weight: 800;"></i> </a> </div>
+                </div>
+            <% }) %>
+        </div>
+    
+        <div class="add-lender">
+            <p> <a href="/addLender/<%= data._id.valueOf() %>" title="Click To Add"> <span> <i class="fas fa-plus"></i> </span> Add New Lender </a> </p>
+        </div>
+    <% } %>
+</body>
+</html>

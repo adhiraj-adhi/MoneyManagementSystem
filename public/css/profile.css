@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* ================================ Profile page related styles ================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #151517;
+}
+
+header {
+    width: 100%;
+    background: #017fdd;
+    box-shadow: 0px 3px 1.7px #017fdd;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .userName {
+    width: 50%;
+    margin-top: auto;
+    padding: 10px 0 10px 30px;
+    /*			border: 2px solid black;*/
+}
+
+header .userName a {
+    text-decoration: none;
+    color: white;
+}
+
+header .logOut {
+    width: 20%;
+    padding: 10px 0 10px 30px;
+    display: flex;
+    align-items: center;
+    /*			border: 2px solid red;*/
+}
+
+header .logOut a {
+    text-decoration: none;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
+header .logOut a:hover {
+    color: orangered;
+}
+
+.container2 {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background: #202022;
+    border-radius: 20px;
+}
+
+.container2 .lenders {
+    width: 90%;
+    height: 100px;
+    margin-bottom: 1.2rem;
+    /*			background: #202022;*/
+    display: flex;
+    border-bottom: 2px solid white;
+}
+
+.container2 .lenders .lender-name {
+    width: 50%;
+    margin-top: 30px;
+    text-align: center;
+    word-break: break-all;
+}
+
+.container2 .lenders .status {
+    width: 30%;
+    height: 100%;
+    /*			text-align: center;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container2 .lenders .status .status-name {
+    width: fit-content;
+    border-bottom: 1.5px solid pink;
+}
+
+.container2 .lenders .status .gave {
+    color: #e31b25;
+}
+
+.container2 .lenders .status .got {
+    color: #0ccd40;
+}
+
+.container2 .lenders .see-deals {
+    width: 20%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.add-lender {
+    width: 15%;
+    height: 75px;
+    margin-left: 3.5%;
+    background: white;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-lender a {
+    text-decoration: none;
+    /*			font-size: 1rem;*/
+    color: #017fdd;
+    transition: 0.3s;
+}
+
+.add-lender a:hover {
+    color: orangered;
+}
+
+@media screen and (max-width : 1100px) {
+    .add-lender {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    header .userName {
+        width: 45%;
+    }
+
+    header .logOut {
+        width: 45%;
+    }
+}
+
+
+
+
+
+/* ======================  addLender.ejs designing ========================== */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #151517;
+}
+
+header {
+    width: 100%;
+    background: #017fdd;
+    box-shadow: 0px 3px 1.7px #017fdd;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .userName {
+    width: 50%;
+    margin-top: auto;
+    padding: 10px 0 10px 30px;
+}
+
+header .userName a {
+    text-decoration: none;
+    color: white;
+}
+
+header .logOut {
+    width: 20%;
+    padding: 10px 0 10px 30px;
+    display: flex;
+    align-items: center;
+}
+
+header .logOut a {
+    text-decoration: none;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
+header .logOut a:hover {
+    color: orangered;
+} */
+
+.container3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container3 .addUser {
+    width: 35%;
+    margin-top: 80px;
+    min-height: 385px;
+    background: #202022;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container3 .addUser form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container3 .addUser form h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.container3 .addUser form .forDesigning {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.4rem;
+}
+
+.container3 .addUser form .forDesigning input {
+    width: 80%;
+    border-radius: 18px;
+    padding: 0.65rem;
+    outline: none;
+    border: none;
+    color: orangered;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.55rem;
+}
+
+.container3 .addUser form .forDesigning p {
+    color: white;
+    font-size: 0.77rem;
+    color: #e31b25;
+}
+
+.container3 .addUser form input[type="submit"] {
+    width: 30%;
+    border-radius: 18px;
+    padding: 0.65rem;
+    outline: none;
+    border: none;
+    background: #017fdd;
+    color: white;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.55rem;
+}
+
+@media screen and (max-width : 1100px) {
+    .container3 .addUser {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .container3 .addUser {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .container3 .addUser {
+        width: 90%;
+    }
+}
+
+
+/* =========================== deals.ejs designing ==================================== */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #151517;
+}
+
+header {
+    width: 100%;
+    background: #017fdd;
+    box-shadow: 0px 3px 1.7px #017fdd;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .userName {
+    width: 50%;
+    margin-top: auto;
+    padding: 10px 0 10px 30px;
+}
+
+header .userName a {
+    text-decoration: none;
+    color: white;
+}
+
+header .logOut {
+    width: 20%;
+    padding: 10px 0 10px 30px;
+    display: flex;
+    align-items: center;
+}
+
+header .logOut a {
+    text-decoration: none;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
+header .logOut a:hover {
+    color: orangered;
+} */
+
+.lendersName {
+    margin-top: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.container4 {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.container4 .card {
+    width: 28%;
+    height: 300px;
+    margin-bottom: 2.5rem;
+    background: #202022;
+    border-radius: 20px;
+}
+
+.container4 .card .details {
+    width: 100%;
+    display: flex;
+}
+
+.container4 .card .details .date {
+    width: 100%;
+    padding: 10px;
+    background: #9e37a9;
+    color: white;
+    border-radius: 20px 20px 0 0;
+}
+
+.container4 .card .details .status {
+    width: 70%;
+}
+
+.container4 .card .status p {
+    color: white;
+    font-size: 0.9rem;
+    padding: 1.2rem;
+}
+
+.container4 .card .status .gave {
+    color: #e31b25;
+}
+
+.container4 .card .status .got {
+    color: #0ccd40;
+}
+
+.container4 .card .amount {
+    font-size: 1.85rem;
+    padding-top: 0.75rem;
+    padding-bottom: 1rem;
+    padding-left: 1.1rem;
+    color: white;
+}
+
+.container4 .card .message {
+    width: 80%;
+    font-size: 0.9rem;
+    color: white;
+    margin-left: 10%;
+    margin-bottom: 10px;
+    /* border: 1px solid white; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container4 .card .options {
+    width: 35%;
+    margin-left: 1.5rem;
+    padding: 0.7rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container4 .card .options a {
+    text-decoration: none;
+    /*			color: #9e37a9;*/
+    color: #f6c544;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+
+.container4 .card .options a:hover {
+    color: orangered;
+}
+
+.container4 .card .options .edit:hover {
+    color: #017fdd;
+}
+
+.add-deal {
+    width: 93%;
+    height: 75px;
+    margin-left: 3.5%;
+    background: white;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-deal a {
+    text-decoration: none;
+    font-size: 1.16rem;
+    color: #017fdd;
+    transition: 0.3s;
+}
+
+.add-deal a:hover {
+    color: orangered;
+}
+
+@media screen and (max-width : 920px) {
+    .container4 .card .options {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .container4 .card {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    header .userName {
+        width: 45%;
+    }
+
+    header .logOut {
+        width: 45%;
+    }
+
+    .container4 .card {
+        width: 85%;
+    }
+
+    .container4 .card .options {
+        width: 35%;
+    }
+}
+
+
+
+/* ================================== addDeal.ejs designing =============================== */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #151517;
+}
+
+header {
+    width: 100%;
+    background: #017fdd;
+    box-shadow: 0px 3px 1.7px #017fdd;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .userName {
+    width: 50%;
+    margin-top: auto;
+    padding: 10px 0 10px 30px;
+}
+
+header .userName a {
+    text-decoration: none;
+    color: white;
+}
+
+header .logOut {
+    width: 20%;
+    padding: 10px 0 10px 30px;
+    display: flex;
+    align-items: center;
+}
+
+header .logOut a {
+    text-decoration: none;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
+header .logOut a:hover {
+    color: orangered;
+} */
+
+.container5 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container5 .addDeal {
+    width: 35%;
+    margin-top: 20px;
+    min-height: 475px;
+    background: #202022;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container5 .addDeal form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container5 .addDeal form h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.container5 .addDeal form .forDesigning {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.4rem;
+}
+
+.container5 .addDeal form .forDesigning input {
+    width: 80%;
+    border-radius: 18px;
+    padding: 0.65rem;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.55rem;
+}
+
+.container5 .addDeal form .forDesigning textarea {
+    width: 80%;
+    border-radius: 18px;
+    padding: 0.65rem;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.55rem;
+    resize: none;
+}
+
+.container5 .addDeal form select {
+    width: 32%;
+    padding: 0.65rem;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.container5 .addDeal form .forDesigning p {
+    color: white;
+    font-size: 0.77rem;
+    color: #e31b25;
+}
+
+.container5 .addDeal form input[type="submit"] {
+    width: 30%;
+    border-radius: 18px;
+    padding: 0.65rem;
+    outline: none;
+    border: none;
+    background: #017fdd;
+    color: white;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0.55rem;
+}
+
+@media screen and (max-width : 1100px) {
+    .container5 .addDeal {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width : 760px) {
+    .container5 .addDeal {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .container5 .addDeal {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width : 400px) {
+
+    .container5 .addDeal form select,
+    .container5 .addDeal form input[type="submit"] {
+        width: 40%;
+    }
+}

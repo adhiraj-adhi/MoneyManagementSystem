@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Add Deal </title>
+	
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+	<header>
+		<h3 class="userName"> <a href="/profile/<%= ids.id %>" title="Refresh"> Hello !!! <%= data.name %> </a> </h3>
+		<div class="logOut">
+			<a href="/logout"> Logout </a>
+		</div>
+	</header>
+
+	<div class="container5">
+		<div class="addDeal">
+			<form action="/addDeal/<%= ids.id %>/<%= ids.lendersId %>" method="post">
+				<h2> Add Deal </h2>
+				<div class="forDesigning">
+					<input type="number" name="amount" min="1" placeholder="Enter Amount" />
+					<p> <%= errorMessage.amount %> </p>
+				</div>
+				<div class="forDesigning">
+					<textarea placeholder="Enter Message" rows="4" name="message"></textarea>
+					<p> <%= errorMessage.message %> </p>
+				</div>
+				<select name="typeOfDeal">
+					<option> You Got </option>
+					<option> You Gave </option>
+				</select>
+				<input type="submit" value="Add Deal" />
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Signin page </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+        <p class="verifierMessage"> <%= data.verifierMessage %> 
+			<% if(data.verifierMessage) { %>
+				<a href="/resendCode" class="resendCode"> Resend Code </a>
+			<% } %>
+		</p>
+		<div class="form-wrapper">
+			<div class="login-form">
+				<p class="errorMessage"> <%= data.loginError %> </p>
+				<form action="/login" method="post">
+					<h3> Login Here </h3>
+					<div class="forDesign">
+						<input type="email" name="email" placeholder="Enter Email" />
+						<p class="emailError"> <%= data.email %> </p>
+						<!-- <p class="emailError">  </p> -->
+					</div>
+
+					<div class="forDesign">
+						<input type="password" name="password" placeholder="Enter Password" />
+						<p class="passwordError"> <%= data.password %> </p>
+						<!-- <p class="passwordError">  </p> -->
+					</div>
+
+					<input type="submit" value="Login">
+				</form>
+
+				<p class="signup-router"> New User ? <a href="/signup"> Register </a></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

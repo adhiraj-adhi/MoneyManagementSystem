@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Add A Lender </title>
+	<link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+	<header>
+		<h3 class="userName"> <a href="" title="Refresh"> Hello !!! <%= data.name %> </a> </h3>
+		<div class="logOut">
+			<a href="/logout"> Logout </a>
+		</div>
+	</header>
+
+	<div class="container3">
+		<div class="addUser">
+			<form action="/addLender/<%= data._id.valueOf() %>" method="post">
+				<h2> Lender's Details </h2>
+				<div class="forDesigning">
+					<input type="text" name="lenderName" placeholder="Enter Lender's Name" />
+					<p> <%= error.lenderName %> </p>
+				</div>
+				<div class="forDesigning">
+					<input type="email" name="lenderEmail" placeholder="Enter Lender's Email" />
+					<p> <%= error.lenderEmail %> </p>
+				</div>
+				<input type="submit" value="Add Lender" />
+			</form>
+		</div>
+	</div>
+</body>
+</html>

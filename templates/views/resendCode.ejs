@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Resend Code </title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+		body{
+			background: #151517;;
+		}
+		.wrapper{
+			width: 100%;
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.wrapper .form-wrapper{
+			width: 40%;
+			height: fit-content;
+			background: #202022;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 20px;
+		}
+		.wrapper .form-wrapper .error-Paragraph{
+			color: #E0115F;
+			font-size: 1.3rem;
+			text-align: center;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+		.wrapper .form-wrapper form{
+			width: 90%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.wrapper .form-wrapper form h4{
+			color: white;
+			margin-bottom: 1rem;
+		}
+		.wrapper .form-wrapper form input{
+			width: 75%;
+			padding: 0.6rem;
+			border-radius: 20px;
+			outline: none;
+			border: none;
+			margin-bottom: 1rem;
+		}
+		.wrapper .form-wrapper form input[type="submit"]{
+			width: 40%;
+			background: #1b74e8;
+			color: white;
+		}
+		.wrapper .form-wrapper .signup_getRouter{
+			text-decoration: none;
+			color: #f6c544;
+			margin-bottom: 1rem;
+		}
+		.wrapper .form-wrapper .signup_getRouter:hover{
+			color: orangered;
+		}
+		@media screen and (max-width : 768px){
+			.wrapper .form-wrapper{
+				width: 60%;
+			}
+		}
+		@media screen and (max-width : 480px){
+			.wrapper .form-wrapper{
+				width: 90%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="form-wrapper">
+			<p class="error-Paragraph"> <%= data.resendCodeErr %> </p>
+			<form action="/resendCode" method="post">
+				<h4> Please Enter The Registered Email </h4>
+				<input type="email" name="email" placeholder="Enter Registered Email " />
+				<input type="submit" value="Resend Code">
+			</form>
+			<a href="/signup" class="signup_getRouter"> Register Yourself </a>
+		</div>
+	</div>
+</body>
+</html>

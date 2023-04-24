@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Edit Deal </title>
+	
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+	<header>
+		<h3 class="userName"> <a href="/profile/<%= ids.id %>" title="Refresh"> Hello !!! <%= data.name %> </a> </h3>
+		<div class="logOut">
+			<a href="/logout"> Logout </a>
+		</div>
+	</header>
+    <% console.log(deal) %>
+	<div class="container5">
+		<div class="editDeal addDeal">
+			<form action="/editDeal/<%= ids.id %>/<%= ids.lendersId %>/<%= ids.dealsId %>" method="post">
+				<h2> Edit Deal </h2>
+                <% let amount = deal.amount %>
+                <% if(deal.amount < 0) { %>
+                    <% amount = - deal.amount %>
+                <% } %>
+				<div class="forDesigning">
+					<input type="number" name="amount" min="1" value="<%= amount %>" placeholder="Enter Amount" />
+					<p> <%= errorMessage.amount %> </p>
+				</div>
+				<div class="forDesigning">
+					<textarea placeholder="Enter Message" rows="4" name="message" ><%=deal.message%></textarea>
+					<p> <%= errorMessage.message %> </p>
+				</div>
+				<select name="typeOfDeal">
+					<option> You Got </option>
+					<option> You Gave </option>
+				</select>
+				<input type="submit" value="Update Deal" />
+			</form>
+		</div>
+	</div>
+</body>
+</html>

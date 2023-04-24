@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: #151517;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .verifierMessage {
+    color: #f6c544;
+    font-size: 1.25rem;
+    margin-bottom: 1.2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.container .verifierMessage .resendCode{
+    text-decoration: none;
+    color: #1b74e8;
+}
+
+.container .verifierMessage .resendCode:hover {
+    color: orangered;
+}
+.container .form-wrapper {
+    width: 45%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .form-wrapper .login-form {
+    width: 75%;
+    height: 100%;
+    background: #202022;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .form-wrapper .login-form .errorMessage {
+    color: #E0115F;
+    font-size: 1.2rem;
+}
+
+.container .form-wrapper .login-form form {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .form-wrapper .login-form form h3 {
+    width: 100%;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #f6c544;
+    margin-bottom: 1.3rem;
+}
+
+.container .form-wrapper .login-form form .forDesign {
+    width: 90%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.container .form-wrapper .login-form form .forDesign input {
+    width: 75%;
+    outline: none;
+    border: none;
+    padding: 0.65rem;
+    border-radius: 20px;
+    margin-bottom: 0.35rem;
+}
+
+.container .form-wrapper .login-form form .forDesign p {
+    color: #E0115F;
+    font-size: 0.80rem;
+}
+
+.container .form-wrapper .login-form form input[type="submit"] {
+    width: 20%;
+    outline: none;
+    border: none;
+    padding: 0.65rem;
+    border-radius: 20px;
+    background: #1b74e8;
+    color: white;
+    cursor: pointer;
+}
+
+.container .form-wrapper .login-form form input[type="submit"]:hover {
+    box-shadow: 0px 0px 0px 2px #1b74e8;
+}
+
+.container .form-wrapper .login-form .signup-router {
+    padding-bottom: 1.3rem;
+    color: #f6c544;
+}
+
+.container .form-wrapper .login-form .signup-router a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.container .form-wrapper .login-form .signup-router a:hover {
+    color: purple;
+}
+
+@media screen and (max-width : 1100px) {
+    .container .form-wrapper {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width : 785px) {
+    .container .form-wrapper {
+        width: 80%;
+    }
+
+    .container .form-wrapper .login-form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width : 550px) {
+    .container .form-wrapper {
+        width: 95%;
+    }
+
+    .container .form-wrapper .login-form {
+        width: 90%;
+    }
+}
+
+
+
+
+/* ===========================  signUp.ejs designing ============================ */
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+} */
+
+.container-signup {
+    width: 100%;
+    height: 100vh;
+    background: #151517;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-signup .form-wrapper {
+    width: 50%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-signup .form-wrapper .signup-form {
+    width: 75%;
+    height: 100%;
+    background: #202022;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-signup .form-wrapper .signup-form h3 {
+    width: 100%;
+    height: 10%;
+    padding-top: 3%;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #f6c544;
+}
+
+.container-signup .form-wrapper .signup-form form {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-signup .form-wrapper .signup-form form .forDesign {
+    width: 90%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.container-signup .form-wrapper .signup-form form .forDesign input {
+    width: 75%;
+    outline: none;
+    border: none;
+    padding: 0.65rem;
+    border-radius: 20px;
+    margin-bottom: 0.35rem;
+}
+
+.container-signup .form-wrapper .signup-form form .forDesign p {
+    color: #E0115F;
+    font-size: 0.80rem;
+}
+
+.container-signup .form-wrapper .signup-form form input[type="submit"] {
+    width: 20%;
+    outline: none;
+    border: none;
+    padding: 0.65rem;
+    border-radius: 20px;
+    background: #1b74e8;
+    color: white;
+}
+
+.container-signup .form-wrapper .signup-form form input[type="submit"]:hover {
+    box-shadow: 0px 0px 0px 2px #1b74e8;
+}
+
+.container-signup .form-wrapper .signup-form .signin-router {
+    padding-bottom: 1.3rem;
+    color: #f6c544;
+}
+
+.container-signup .form-wrapper .signup-form .signin-router a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.container-signup .form-wrapper .signup-form .signin-router a:hover {
+    color: purple;
+}
+
+@media screen and (max-width : 1100px) {
+    .container-signup .form-wrapper {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width : 785px) {
+    .container-signup .form-wrapper {
+        width: 80%;
+    }
+
+    .container-signup .form-wrapper .signup-form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width : 550px) {
+    .container-signup .form-wrapper {
+        width: 95%;
+    }
+
+    .container-signup .form-wrapper .signup-form {
+        width: 90%;
+    }
+}
