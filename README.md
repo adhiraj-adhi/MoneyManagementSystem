@@ -1,6 +1,6 @@
 # MoneyManagementSystem
 
-This is a money management system build on backend technologies like Node, Express, MongoDB and frontend technologies HTML5, CSS3, JavaScript.
+This is a money management system with complete authentication build on backend technologies like Node, Express, MongoDB and frontend technologies HTML5, CSS3, JavaScript.
 Using this system one can manage their deals and money.
 
 -> .env-Sample :-
